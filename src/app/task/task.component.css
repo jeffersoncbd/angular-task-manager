@@ -1,0 +1,42 @@
+div {
+  display: flex;
+  flex-direction: column;
+  color: rgb(220, 220, 220);
+  gap: 16px;
+}
+
+div main {
+  background-color: rgb(30, 30, 30);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+div main header {
+  /* background-color: limegreen; */
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+div main header input {
+  align-self: flex-start;
+  width: 24px;
+  height: 24px;
+  accent-color: limegreen;
+}
+
+div main header a {
+  align-self: flex-end;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+  background-color: rgb(60, 60, 60);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+div main header a:hover {
+  background-color: rgb(80, 80, 80);
+}

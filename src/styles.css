@@ -1,0 +1,20 @@
+:host {
+  --white-color: rgb(220, 220, 220);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  user-select: none;
+  cursor: default;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(23, 23, 23);
+}

@@ -1,0 +1,33 @@
+ul {
+  list-style: none;
+}
+ul a {
+  text-decoration: none;
+  display: block;
+}
+ul a li {
+  color: rgb(220, 220, 220);
+  background-color: rgb(43, 43, 43);
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+ul a li:hover {
+  background-color: rgb(50, 50, 50);
+}
+ul a li span {
+  flex: 1;
+  cursor: pointer;
+}
+ul a li input {
+  width: 16px;
+  height: 16px;
+  accent-color: limegreen;
+}
+
+a + a {
+  margin-top: 4px;
+}

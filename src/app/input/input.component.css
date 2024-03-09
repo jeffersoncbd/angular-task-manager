@@ -1,0 +1,23 @@
+form {
+  margin-bottom: 16px;
+  display: flex;
+  background-color: rgb(70, 70, 70);
+  padding: 8px 16px;
+  border-radius: 8px;
+  gap: 16px;
+}
+
+form input {
+  background-color: rgb(70, 70, 70);
+  border: none;
+  outline: none;
+  color: rgb(220, 220, 220);
+}
+form input::placeholder {
+  color: rgb(140, 140, 140);
+}
+
+form input[type="text"] {
+  flex: 1;
+  color-scheme: dark;
+}

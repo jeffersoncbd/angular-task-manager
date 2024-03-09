@@ -1,0 +1,15 @@
+<app-input></app-input>
+<ul>
+  <a *ngFor="let task of tasks" [routerLink]="['/task', task.id]">
+    <li>
+      <input
+        type="checkbox"
+        [checked]="task.completed"
+        (click)="onClick($event)"
+        (change)="onCheckBoxChange(task.id)"
+      />
+      <span>{{ task.description }}</span>
+      {{ task.date?.toLocaleDateString("pt-BR") }}
+    </li>
+  </a>
+</ul>

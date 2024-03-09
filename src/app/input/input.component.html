@@ -1,0 +1,8 @@
+<form [formGroup]="taskForm" (submit)="newTaskSubmit()">
+  <input
+    type="text"
+    placeholder="Adicionar tarefa"
+    formControlName="description"
+  />
+  <input type="date" formControlName="dueDate" />
+</form>
