@@ -15,21 +15,20 @@ div main {
   gap: 8px;
 }
 
-div main header {
+div header {
   /* background-color: limegreen; */
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
-div main header input {
-  align-self: flex-start;
+div header input {
   width: 24px;
   height: 24px;
   accent-color: limegreen;
 }
 
-div main header a {
+div header a {
   align-self: flex-end;
   color: rgb(220, 220, 220);
   text-decoration: none;
@@ -37,6 +36,17 @@ div main header a {
   padding: 8px 16px;
   border-radius: 8px;
 }
-div main header a:hover {
+div header a:hover {
   background-color: rgb(80, 80, 80);
+}
+
+div main h2 {
+  text-align: justify;
+}
+
+div main p.show {
+  display: block;
+}
+div main p.hidden {
+  display: none;
 }

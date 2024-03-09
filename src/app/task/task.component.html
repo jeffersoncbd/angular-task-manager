@@ -1,16 +1,16 @@
 <div>
+  <header>
+    <input
+      type="checkbox"
+      [checked]="task?.completed"
+      (change)="onCheckBoxChange(task?.id)"
+    />
+    <a [routerLink]="['/']">voltar</a>
+  </header>
   <main>
-    <header>
-      <input
-        type="checkbox"
-        [checked]="task?.completed"
-        (change)="onCheckBoxChange(task?.id)"
-      />
-      <h3>{{ task?.description }}</h3>
-      <a [routerLink]="['/']">voltar</a>
-    </header>
-    <p>
-      {{ task?.date?.toLocaleDateString("pt-BR") }}
+    <h2>{{ task?.description }}</h2>
+    <p [className]="task?.date === undefined ? 'hidden' : 'show'">
+      <b>prazo: </b>{{ task?.date?.toLocaleDateString("pt-BR") }}
     </p>
   </main>
 </div>

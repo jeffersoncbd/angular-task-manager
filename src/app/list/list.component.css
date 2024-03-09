@@ -21,6 +21,9 @@ ul a li:hover {
 ul a li span {
   flex: 1;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 ul a li input {
   width: 16px;
