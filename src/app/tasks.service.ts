@@ -10,7 +10,12 @@ export class TasksService {
   constructor() {
     const storageTasks = localStorage.getItem('tasks');
     if (storageTasks !== null) {
-      this.tasks = JSON.parse(storageTasks);
+      this.tasks = (JSON.parse(storageTasks) as Task[]).map((task) => {
+        if (task.date !== undefined) {
+          task.date = new Date(task.date);
+        }
+        return task;
+      });
     }
   }
 
@@ -62,5 +67,6 @@ export class TasksService {
       }
       return task;
     });
+    this.saveTasks();
   }
 }
