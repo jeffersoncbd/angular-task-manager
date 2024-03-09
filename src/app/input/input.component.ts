@@ -19,11 +19,15 @@ export class InputComponent {
   constructor() {}
 
   newTaskSubmit() {
+    const { description, dueDate } = this.taskForm.value;
+
+    if (description === undefined || description === '') {
+      return;
+    }
+
     this.tasksService.addTask(
-      this.taskForm.value.description ?? '',
-      this.taskForm.value.dueDate
-        ? new Date(this.taskForm.value.dueDate)
-        : undefined
+      description ?? '',
+      dueDate ? new Date(dueDate) : undefined
     );
     this.taskForm.reset();
   }
