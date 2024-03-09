@@ -8,32 +8,13 @@ export class TasksService {
   tasks: Task[] = [];
 
   constructor() {
-    const tasks = localStorage.getItem('tasks');
-    if (tasks !== null) {
-      this.tasks = (JSON.parse(tasks) as any).map((task: any) => {
-        if (task.date !== undefined) {
-          task.date = new Date(task.date);
-        }
-        return task;
-      });
+    const storageTasks = localStorage.getItem('tasks');
+    if (storageTasks !== null) {
+      this.tasks = JSON.parse(storageTasks);
     }
   }
 
-  getAllTasks(): Task[] {
-    return this.tasks;
-  }
-
-  getTaskById(id: number): Task | undefined {
-    return this.tasks.find((task) => task.id === id);
-  }
-
-  addTask(description: string, date: Date | undefined): void {
-    this.tasks.push({
-      id: this.tasks.length,
-      description,
-      date,
-      completed: false,
-    });
+  private saveTasks(): void {
     localStorage.setItem(
       'tasks',
       JSON.stringify(
@@ -48,6 +29,30 @@ export class TasksService {
         })
       )
     );
+  }
+
+  getAllTasks(): Task[] {
+    return this.tasks;
+  }
+
+  getTaskById(taskId: number): Task | undefined {
+    return this.tasks.find((task) => task.id === taskId);
+  }
+
+  addTask(description: string, date: Date | undefined): void {
+    const id = this.tasks.length;
+    this.tasks[id] = {
+      id,
+      description,
+      date,
+      completed: false,
+    };
+    this.saveTasks();
+  }
+
+  removeTask(taskId: number | undefined): void {
+    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+    this.saveTasks();
   }
 
   toggleCompleted(taskId: number | undefined): void {

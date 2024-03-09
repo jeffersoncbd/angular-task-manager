@@ -18,3 +18,36 @@ a {
 body {
   background-color: rgb(23, 23, 23);
 }
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  color: rgb(220, 220, 220);
+  background-color: rgb(60, 60, 60);
+  transition: background-color 0.5s;
+}
+button:hover {
+  background-color: rgb(80, 80, 80);
+}
+
+.danger {
+  background-color: rgb(80, 0, 0);
+  color: rgb(255, 0, 0);
+  transition: background-color 0.5s;
+}
+.danger:hover {
+  background-color: rgb(120, 0, 0);
+}
+
+.success {
+  background-color: rgb(0, 80, 0);
+  color: rgb(0, 255, 0);
+  transition: background-color 0.5s;
+}
+.success:hover {
+  background-color: rgb(0, 120, 0);
+}

@@ -3,7 +3,7 @@
     <input
       type="checkbox"
       [checked]="task?.completed"
-      (change)="onCheckBoxChange(task?.id)"
+      (change)="onCheckBoxChange()"
     />
     <a [routerLink]="['/']">voltar</a>
   </header>
@@ -13,4 +13,17 @@
       <b>prazo: </b>{{ task?.date?.toLocaleDateString("pt-BR") }}
     </p>
   </main>
+  <footer>
+    <button class="danger" [hidden]="confirmDelete" (click)="onDeleteClick()">
+      excluir
+    </button>
+    <button [hidden]="confirmDelete">editar</button>
+
+    <button [hidden]="!confirmDelete" (click)="onCancelClick()">
+      cancelar
+    </button>
+    <button class="danger" [hidden]="!confirmDelete" (click)="onDelete()">
+      confirmar
+    </button>
+  </footer>
 </div>
