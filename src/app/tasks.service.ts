@@ -45,7 +45,7 @@ export class TasksService {
   }
 
   addTask(description: string, date: Date | undefined): void {
-    const id = this.tasks.length;
+    const id = new Date().getTime();
     this.tasks[id] = {
       id,
       description,
