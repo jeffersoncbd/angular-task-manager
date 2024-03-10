@@ -46,12 +46,12 @@ export class TasksService {
 
   addTask(description: string, date: Date | undefined): void {
     const id = new Date().getTime();
-    this.tasks[id] = {
+    this.tasks.push({
       id,
       description,
       date,
       completed: false,
-    };
+    });
     this.saveTasks();
   }
 
