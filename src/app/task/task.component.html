@@ -7,23 +7,34 @@
     />
     <a [routerLink]="['/']">voltar</a>
   </header>
-  <main>
-    <h2>{{ task?.description }}</h2>
-    <p [className]="task?.date === undefined ? 'hidden' : 'show'">
+  <main [formGroup]="taskForm">
+    <h2 [hidden]="edit">{{ task?.description }}</h2>
+    <p [hidden]="task?.date === undefined || edit">
       <b>prazo: </b>{{ task?.date?.toLocaleDateString("pt-BR") }}
     </p>
+
+    <textarea [hidden]="!edit" formControlName="description"></textarea>
+    <input [hidden]="!edit" type="date" formControlName="dueDate" />
   </main>
   <footer>
-    <button class="danger" [hidden]="confirmDelete" (click)="onDeleteClick()">
+    <button
+      class="danger"
+      [hidden]="confirmDelete || edit"
+      (click)="onDeleteClick()"
+    >
       excluir
     </button>
-    <button [hidden]="confirmDelete">editar</button>
-
     <button [hidden]="!confirmDelete" (click)="onCancelClick()">
       cancelar
     </button>
     <button class="danger" [hidden]="!confirmDelete" (click)="onDelete()">
       confirmar
     </button>
+
+    <button [hidden]="confirmDelete || edit" (click)="onEditClick()">
+      editar
+    </button>
+    <button [hidden]="!edit" (click)="onCancelClick()">cancelar</button>
+    <button class="success" [hidden]="!edit" (click)="onSave()">salvar</button>
   </footer>
 </div>

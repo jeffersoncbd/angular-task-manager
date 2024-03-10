@@ -48,11 +48,25 @@ div main h2 {
   text-align: justify;
 }
 
-div main p.show {
-  display: block;
+div main textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  background-color: rgb(40, 40, 40);
+  color: rgb(220, 220, 220);
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: text;
 }
-div main p.hidden {
-  display: none;
+
+div main input {
+  background-color: rgb(40, 40, 40);
+  color: rgb(220, 220, 220);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 div footer {

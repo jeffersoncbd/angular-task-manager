@@ -40,8 +40,11 @@ export class TasksService {
     return this.tasks;
   }
 
-  getTaskById(taskId: number): Task | undefined {
-    return this.tasks.find((task) => task.id === taskId);
+  getTaskById(taskId: number | undefined): Task | undefined {
+    if (taskId !== undefined) {
+      return this.tasks.find((task) => task.id === taskId);
+    }
+    return;
   }
 
   addTask(description: string, date: Date | undefined): void {
@@ -53,6 +56,16 @@ export class TasksService {
       completed: false,
     });
     this.saveTasks();
+  }
+
+  editTask(taskId: number, description: string, date: Date | undefined): void {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === taskId) {
+        task.description = description;
+        task.date = date;
+      }
+      return task;
+    });
   }
 
   removeTask(taskId: number | undefined): void {
