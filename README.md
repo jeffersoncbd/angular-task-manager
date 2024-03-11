@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jeffersoncbd/todoapp-course-react-redux/master/angular-task-manager.png" width="600">
+  <img src="https://github.com/jeffersoncbd/angular-task-manager/blob/main/angular-task-manager.png?raw=true" width="600">
 </p>
 
 # AngularTaskManager
