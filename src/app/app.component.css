@@ -1,7 +1,27 @@
 h2 {
   color: rgb(220, 220, 220);
-  text-align: center;
   margin: 20px 0px;
+  text-align: center;
+}
+p {
+  width: 200px;
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 0px;
+  margin: 0px auto 16px;
+  border-radius: 8px;
+}
+p app-github-icon {
+  height: 32px !important;
+}
+p a {
+  color: rgb(220, 220, 220);
+}
+p a:visited {
+  color: rgb(220, 220, 220);
 }
 main {
   margin: 0px auto;
