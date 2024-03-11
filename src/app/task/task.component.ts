@@ -18,7 +18,7 @@ export class TaskComponent {
 
   task: Task | undefined;
   confirmDelete = false;
-  edit = true;
+  edit = false;
   taskForm = new FormGroup({
     description: new FormControl(''),
     dueDate: new FormControl(''),
